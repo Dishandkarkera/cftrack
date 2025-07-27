@@ -1,6 +1,9 @@
 streamlit
+scikit-learn
 pandas
 matplotlib
 seaborn
 joblib
 numpy
+plotly
+shap
