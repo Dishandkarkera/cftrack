@@ -32,7 +32,8 @@ st.markdown("""
 @st.cache_resource
 def load_assets():
     model = joblib.load(os.path.join(os.path.dirname(__file__), '..', 'model', 'emission_model.pkl'))
-    df = pd.read_csv('../data/SupplyChainGHGEmissionFactors.csv')
+    file_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'SupplyChainGHGEmissionFactors.csv')
+    df = pd.read_csv(file_path)
     return model, df
 
 model, raw_df = load_assets()
