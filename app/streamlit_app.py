@@ -1,5 +1,5 @@
 # cftrack/app/streamlit_app.py
-
+import os
 import streamlit as st
 import pandas as pd
 import joblib
@@ -31,7 +31,7 @@ st.markdown("""
 # Load model and raw dataset
 @st.cache_resource
 def load_assets():
-    model = joblib.load('../model/emission_model.pkl')
+    model = joblib.load(os.path.join(os.path.dirname(__file__), '..', 'model', 'emission_model.pkl'))
     df = pd.read_csv('../data/SupplyChainGHGEmissionFactors.csv')
     return model, df
 
